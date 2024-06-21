@@ -1,0 +1,36 @@
+
+body {
+    margin : 0px 50px;
+}
+header {
+    margin : 10px 0px;  
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header h1 {
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 700;
+}
+nav ul {
+    list-style : none;
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Roboto Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 400;
+}
+nav ul li {
+    margin: 0 15px; 
+    text-decoration: none;
+    color:black;
+}
+.container {
+    font-family: "Roboto Mono", monospace;
+
+}
