@@ -1,36 +1,91 @@
 
-body {
-    margin : 0px 50px;
+:root {
+    --background-color-light: #FEFAF6 ;
+    --text-color-light: #000000;
+    --background-color-dark: #121212;
+    --text-color-dark: #ffffff;
+  }
+  body {
+      background-color: var(--background-color-light) ;
+      color: var(--text-color-light);
+      padding : 0px 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    header {
+        margin : 10px 0px;  
+        height: 10vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    header h1 {
+        font-family: "Roboto Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 700;
+    }
+    nav ul {
+        list-style : none;
+        display : flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        font-family: "Roboto Mono", monospace;
+        font-optical-sizing: auto;
+        font-weight: 400;
+    }
+    nav ul li {
+        margin: 0 30px; 
+        text-decoration: none;
+    }
+    nav a {
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 0.2s;
+        
+    }
+    nav a:hover {
+        transform: scale(1.25); /* Slightly enlarges the image on hover */
+        
+    }
+    .container {
+        font-family: "Roboto Mono", monospace;
+        padding: 50px 0px;
+        
+    }
+    
+    .dark-mode-button {
+        border: none;
+        padding: 0;
+    cursor: pointer;
+    background: none;
+    outline: none;
 }
-header {
-    margin : 10px 0px;  
-    height: 10vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+
+.dark-mode-button img {
+    height: 25px; /* Adjust the size of the image button */
+    width: auto; /* Ensures the image scales proportionally */
+    border-radius: 50%; /* Makes the image button circular */
+    transition: transform 0.2s; /* Adds a smooth hover effect */
 }
-header h1 {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 700;
+
+.dark-mode-button:hover img {
+    transform: scale(1.1); /* Slightly enlarges the image on hover */
 }
-nav ul {
-    list-style : none;
-    display : flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
+
+footer {
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-weight: 400;
+    display: flex;
+    justify-content: center;
 }
-nav ul li {
-    margin: 0 15px; 
-    text-decoration: none;
-    color:black;
+a {
+    color : inherit;
 }
-.container {
-    font-family: "Roboto Mono", monospace;
-
-}
+.dark-mode {
+    background-color: var(--background-color-dark);
+    color: var(--text-color-dark);
+  }
