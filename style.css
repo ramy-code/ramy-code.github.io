@@ -1,91 +1,159 @@
-
 :root {
-    --background-color-light: #FEFAF6 ;
-    --text-color-light: #000000;
-    --background-color-dark: #121212;
-    --text-color-dark: #ffffff;
-  }
-  body {
-      background-color: var(--background-color-light) ;
-      color: var(--text-color-light);
-      padding : 0px 300px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    header {
-        margin : 10px 0px;  
-        height: 10vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
-    header h1 {
-        font-family: "Roboto Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 700;
-    }
-    nav ul {
-        list-style : none;
-        display : flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-evenly;
-        font-family: "Roboto Mono", monospace;
-        font-optical-sizing: auto;
-        font-weight: 400;
-    }
-    nav ul li {
-        margin: 0 30px; 
-        text-decoration: none;
-    }
-    nav a {
-        text-decoration: none;
-        cursor: pointer;
-        transition: transform 0.2s;
-        
-    }
-    nav a:hover {
-        transform: scale(1.25); /* Slightly enlarges the image on hover */
-        
-    }
-    .container {
-        font-family: "Roboto Mono", monospace;
-        padding: 50px 0px;
-        
-    }
-    
-    .dark-mode-button {
-        border: none;
-        padding: 0;
+    --background-color-light: #ffffff;
+    --text-color-light: #2D2D2D;
+    --secondary-color-light: #6B7280;
+    --border-color-light: #E5E7EB;
+    --background-color-dark: #191919;
+    --text-color-dark: #E5E7EB;
+    --secondary-color-dark: #9CA3AF;
+    --border-color-dark: #374151;
+}
+
+body {
+    background-color: var(--background-color-light);
+    color: var(--text-color-light);
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+}
+
+.wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+header {
+    border-bottom: 1px solid var(--border-color-light);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    background-color: var(--background-color-light);
+    z-index: 1000;
+}
+
+header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    color: var(--secondary-color-light);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--text-color-light);
+}
+
+.container {
+    padding: 64px 0;
+}
+
+section {
+    margin-bottom: 64px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.project-card {
+    border: 1px solid var(--border-color-light);
+    border-radius: 8px;
+    padding: 24px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+    margin: 0 0 12px 0;
+    font-size: 1.25rem;
+}
+
+.project-card p {
+    color: var(--secondary-color-light);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.dark-mode-button {
+    border: none;
+    padding: 8px;
     cursor: pointer;
     background: none;
-    outline: none;
+    border-radius: 6px;
+    transition: background-color 0.2s;
 }
 
-.dark-mode-button img {
-    height: 25px; /* Adjust the size of the image button */
-    width: auto; /* Ensures the image scales proportionally */
-    border-radius: 50%; /* Makes the image button circular */
-    transition: transform 0.2s; /* Adds a smooth hover effect */
+.dark-mode-button:hover {
+    background-color: var(--border-color-light);
 }
 
-.dark-mode-button:hover img {
-    transform: scale(1.1); /* Slightly enlarges the image on hover */
+.dark-mode-button svg {
+    width: 20px;
+    height: 20px;
 }
 
-footer {
-    font-family: "Roboto Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    display: flex;
-    justify-content: center;
-}
-a {
-    color : inherit;
-}
 .dark-mode {
     background-color: var(--background-color-dark);
     color: var(--text-color-dark);
-  }
+}
+
+.dark-mode header {
+    background-color: var(--background-color-dark);
+    border-color: var(--border-color-dark);
+}
+
+.dark-mode .project-card {
+    border-color: var(--border-color-dark);
+}
+
+.dark-mode nav ul li a {
+    color: var(--secondary-color-dark);
+}
+
+.dark-mode nav ul li a:hover {
+    color: var(--text-color-dark);
+}
+
+.dark-mode .dark-mode-button:hover {
+    background-color: var(--border-color-dark);
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
+    nav ul {
+        gap: 16px;
+    }
+}
